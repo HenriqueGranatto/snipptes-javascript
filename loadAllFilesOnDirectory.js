@@ -1,5 +1,7 @@
-/** Carrega todos os arquivos de todos os diretórios a partir do atual (ondeo método foi chamado) */
-loadAllFilesOnDirectory()
+/** 
+ * Carrega todos os arquivos de todos os diretórios a partir do atual (onde o método foi chamado) 
+ */
+const loadAllFilesOnDirectory = () =>
 {
     try
     {
