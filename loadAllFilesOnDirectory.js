@@ -26,8 +26,8 @@ const loadAllFilesOnDirectory = () =>
                             {
                                 require(`${directory}\\${file}`)
                             }
-                        });
-                    });       
+                        })
+                    })
                 }
             })
         })   
