@@ -33,3 +33,32 @@ const readFileAndGetData = async (e) =>
         throw e
     }
 }
+
+/** 
+ * Lê o arquivo de um determinado diretório e retorna as informações sobre o mesmo. 
+ */
+const readFileAndGetData = async () =>
+{
+    try
+    {
+        const read = new Promise((res, rej) => {
+            const mapsPath = path.join('..', 'assets', 'map')
+
+            fs.readFile(path.join(__dirname, mapsPath , "teste.json"), 'utf8', function (error, data) {
+                if (error) rej(error)
+                res(JSON.parse(data))
+            })
+        })
+
+        let response = 
+        {
+            data: await read
+        }
+
+        return response
+    }
+    catch(e)
+    {   
+        throw e
+    }
+}
