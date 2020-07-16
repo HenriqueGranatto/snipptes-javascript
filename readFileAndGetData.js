@@ -36,15 +36,15 @@ const readFileAndGetData = async (e) =>
 
 /** 
  * Lê o arquivo de um determinado diretório e retorna as informações sobre o mesmo. 
+ * Suporte para NodeJS
+ * Necessário utilizar o módulo 'fs'
  */
-const readFileAndGetData = async () =>
+const readFileAndGetData = async (filePath) =>
 {
     try
     {
         const read = new Promise((res, rej) => {
-            const mapsPath = path.join('..', 'assets', 'map')
-
-            fs.readFile(path.join(__dirname, mapsPath , "teste.json"), 'utf8', function (error, data) {
+            fs.readFile(filePath, 'utf8', function (error, data) {
                 if (error) rej(error)
                 res(JSON.parse(data))
             })
